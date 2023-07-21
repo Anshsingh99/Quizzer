@@ -51,7 +51,7 @@ const QuesTile = (props) => {
         <input id='4' onChange={(event)=>{seto4([event.target.value])}}disabled={submitted}></input><br/>
         <label className="label-color-pad">Ans:</label>
         <input id='5'type='Number' onChange={(event )=>{setanskey(event.target.value)}} max={4} disabled={submitted}></input><br/>
-        <button  onClick={dosome} className='questile-btn'>Done</button>
+        <button  onClick={dosome} className='questile-btn'>Done</button><br/>
         {/* <button onClick={getsom}>get</button> */}
         
         
