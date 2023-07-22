@@ -17,8 +17,6 @@ const Home = (props) => {
 
   return (
     <div className='home-text'>
-      
-      
       <Header/>
         <p>
 Introducing Quizzer: The Ultimate Knowledge Challenge!

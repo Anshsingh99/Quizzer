@@ -1,5 +1,4 @@
 import React from 'react'
-import Questions from './Questions' 
 import '../App.css'
 import { useState } from 'react'
 import axios from 'axios'
@@ -10,16 +9,11 @@ const QuesTile = (props) => {
   const[quest,setQuest]=useState();
 
   // const[Opt,setOpt]=useState([]);
-  const[opt,setopt]=useState([]);
-  var o=new Array()
+  // const[opt,setopt]=useState([]);
   // const[Ans,setAns]=useState([])
   const[anskey,setanskey]=useState("");
   const [submitted, setSubmitted] = useState(false);
-  const Questions=new Array()
-  const getsom = ()=>{
-    axios.get('http://127.0.0.1:8000/get').then(res=>console.log(res.data)
-    )
-  }
+
   const[o1,seto1]=useState('')
   const[o2,seto2]=useState('')
   const[o3,seto3]=useState('')

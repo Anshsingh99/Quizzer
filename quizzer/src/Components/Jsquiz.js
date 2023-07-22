@@ -14,7 +14,7 @@ const Jsquiz = (props) => {
         "9.How do you check if a variable is an array in JavaScript?",
         "10.What is the purpose of 'JSON.parse()' in JavaScript?"
       ];
-      
+
       const options = [
         ["1.var name;", "2.variable name;", "3.v name;", "4.variable-name;"],
         ["1.===", "2.==", "3.=", "4.===="],
@@ -30,10 +30,7 @@ const Jsquiz = (props) => {
          
       const correctAnswers = [1, 4, 2, 3, 1, 1, 1, 3, 1, 1];
 
-
   const [userAnswers, setUserAnswers] = useState(new Array(questions.length).fill(''));
-
-  
   const [submitted, setSubmitted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 

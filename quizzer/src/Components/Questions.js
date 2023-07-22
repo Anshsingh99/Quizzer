@@ -1,24 +1,8 @@
 import React from 'react'
 import '../App.css'
 import QuesTile from './QuesTile'
-import { useState } from 'react'
-import axios from 'axios'
-import { Navigate, useNavigate } from 'react-router-dom'
-import Home from './Home'
 const Questions = (props) => {
-  
-  var qnoo
-  const navigate=useNavigate();
-  const navigateToQuesTile=(props)=>{
-    qnoo=document.getElementById("1").value
-    console.log(qnoo);
-    props.qno=qnoo
-    navigate("/Ques")
-  }
-  const navigateToPlayQuiz = () => {
-    props.getsom()
-    navigate("/Playquiz");
-  };
+ 
   const allComponents=new Array(props.qno).fill(<QuesTile setQue={props.setQue} setOpt={props.setOpt} setAns={props.setAns} Que={props.Que} Opt={props.Opt} Ans={props.Ans}/>)
   return (
     <div>

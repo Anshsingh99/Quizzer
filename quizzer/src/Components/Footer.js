@@ -13,10 +13,6 @@ const Footer = () => {
 return (
     <div className="footer--pin">
 	<Box>
-	{/* <h1 style={{ color: "green",
-				textAlign: "center",
-				marginTop: "-50px" }}>
-	</h1> */}
 	<Container>
 		<Row>
 		<Column>

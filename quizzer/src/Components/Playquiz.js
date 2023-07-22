@@ -10,7 +10,6 @@ const Playquiz = (props) => {
     //   };
   return (
     <div>
-        
         <br/>
         <br/>
         <br/>
