@@ -14,7 +14,7 @@ import Playquiz from './Components/Playquiz';
 
 
 function App() {
-  {document.title="Quizzer"}
+  
   const navigate=useNavigate();
   const [qno,setqno]=useState(0)
     
