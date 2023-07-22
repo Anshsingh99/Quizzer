@@ -3,10 +3,9 @@ import "../App.css";
 import Popup from "./Popup";
 import axios from "axios";
 const Createdquiz = (props) => {
+  
   const [userAnswers, setUserAnswers] = useState(props.questions!==undefined?new Array(props.questions.length).fill(''):null);
   useEffect(() => {
-    console.log(props.questions)
-    console.log(userAnswers)
     if (props.questions === undefined) {
       axios.get('https://quizzer.if-anshansh.repl.co/get').then((re)=>{
         console.log('direct request, getting data....')
@@ -15,10 +14,9 @@ const Createdquiz = (props) => {
     props.setAnswers(re.data['answers']);
     props.setQuizname(re.data['title'])
     setUserAnswers(new Array(re.data['questions'].length).fill(''))
-    console.log(props.questions)
+   
       })
     }
-    console.log(props.questions);
   },[]);
   
   const [submitted, setSubmitted] = useState(false);
