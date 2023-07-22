@@ -1,16 +1,10 @@
 import React from 'react'
 import '../App.css'
 import { useState } from 'react'
-import axios from 'axios'
 
 const QuesTile = (props) => {
   
-  // const [Que,setQue]=useState([]);
   const[quest,setQuest]=useState();
-
-  // const[Opt,setOpt]=useState([]);
-  // const[opt,setopt]=useState([]);
-  // const[Ans,setAns]=useState([])
   const[anskey,setanskey]=useState("");
   const [submitted, setSubmitted] = useState(false);
 
@@ -22,7 +16,6 @@ const QuesTile = (props) => {
  let i=0
   const dosome = () => {
      props.setQue([...props.Que,quest])
-    //  setopt([o])
      props.setOpt([...props.Opt,[o1,o2,o3,o4]])
      props.setAns([...props.Ans,anskey])
      setSubmitted(true)
@@ -46,7 +39,6 @@ const QuesTile = (props) => {
         <label className="label-color-pad">Ans:</label>
         <input id='5'type='Number' onChange={(event )=>{setanskey(event.target.value)}} max={4} disabled={submitted}></input><br/>
         <button  onClick={dosome} className='questile-btn'>Done</button><br/>
-        {/* <button onClick={getsom}>get</button> */}
         
         
     </div>

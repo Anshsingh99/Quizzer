@@ -2,7 +2,7 @@ import React from 'react'
 import '../App.css'
 import Header from './Header'
 import Footer from './Footer';
-import { BrowserRouter, Routes, Route, Link,useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Home = (props) => {
 
   const navigate = useNavigate();
