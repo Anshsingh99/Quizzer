@@ -18,6 +18,7 @@ const Home = (props) => {
   return (
     <div className='home-text'>
       <Header/>
+      <div className='content'>
         <p>
 Introducing Quizzer: The Ultimate Knowledge Challenge!
 </p>
@@ -36,8 +37,10 @@ What sets Quizzer apart is its user-friendly interface and engaging features. En
 <p>
 Ready to take on the world of trivia? Download Quizzer today and unlock the door to endless learning and entertainment. Sharpen your mind, expand your knowledge, and become a true Quizzer master!
 </p>
+</div>
 <button className='start-quiz-button' onClick={navigateToQuestions} >Create Quiz</button>
 <button className='start-quiz-button' onClick={navigateToQuiz} >Play Quiz</button>
+
 <Footer />
 </div>
   )

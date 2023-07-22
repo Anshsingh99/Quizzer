@@ -8,9 +8,19 @@
 } 
 .home-text{
   color: white;
-  min-height: calc(100vh - 34px);
+  /* min-height: calc(100vh - 34px); */
+  min-height: calc(100vh - 30px);
   
 }
+.footer--pin {
+   margin-top: 360px;
+  position:relative;
+ 
+  /* left: 0;
+  bottom: 0;
+  /* height: 50px; */
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -168,12 +178,7 @@
   border: 5px solid #fb61a9;
   color:white;
 }
-.footer--pin {
-  position: relative;
-  margin-top: 360px;
-  left: 0;
-  bottom: 0;
-}
+
 
 .popup-box {
   position: fixed;

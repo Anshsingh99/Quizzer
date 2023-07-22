@@ -5,7 +5,7 @@ padding: 20px 20px;
 background: lightblue;
 position: absolute;
 bottom: 0;
-width: 100%;
+width: 96.7%;
 
 
 @media (max-width: 1000px) {
