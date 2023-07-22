@@ -14,10 +14,10 @@ const Createdquiz = (props) => {
     props.setAnswers(re.data['answers']);
     props.setQuizname(re.data['title'])
     setUserAnswers(new Array(re.data['questions'].length).fill(''))
-   
+    
       })
     }
-  },[]);
+  },[props]);
   
   const [submitted, setSubmitted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
