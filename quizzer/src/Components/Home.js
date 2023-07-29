@@ -1,8 +1,15 @@
 import React from 'react'
 import '../App.css'
-import Header from './Header'
-import Footer from './Footer';
 import { useNavigate } from "react-router-dom";
+import {
+  Box,
+  Container,
+  Row,
+  Column,
+  FooterLink,
+  Heading,
+  } from "./FooterStyles";
+  
 const Home = (props) => {
 
   const navigate = useNavigate();
@@ -16,8 +23,8 @@ const Home = (props) => {
   };
 
   return (
+    <>
     <div className='home-text'>
-      <Header/>
       <div className='content'>
         <p>
 Introducing Quizzer: The Ultimate Knowledge Challenge!
@@ -40,9 +47,67 @@ Ready to take on the world of trivia? Download Quizzer today and unlock the door
 </div>
 <button className='start-quiz-button' onClick={navigateToQuestions} >Create Quiz</button>
 <button className='start-quiz-button' onClick={navigateToQuiz} >Play Quiz</button>
-
-<Footer />
 </div>
+<div className="footer--pin">
+	<Box>
+	<Container>
+		<Row>
+		<Column>
+			<Heading>About Us</Heading>
+			<FooterLink href="#">Aim</FooterLink>
+			<FooterLink href="#">Vision</FooterLink>
+			<FooterLink href="#">Testimonials</FooterLink>
+		</Column>
+		<Column>
+			<Heading>Services</Heading>
+			<FooterLink href="#">Writing</FooterLink>
+			<FooterLink href="#">Internships</FooterLink>
+			<FooterLink href="#">Coding</FooterLink>
+			<FooterLink href="#">Teaching</FooterLink>
+		</Column>
+		<Column>
+			<Heading>Contact Us</Heading>
+			<FooterLink href="#">Uttar Pradesh</FooterLink>
+			<FooterLink href="#">Ahemdabad</FooterLink>
+			<FooterLink href="#">Indore</FooterLink>
+			<FooterLink href="#">Mumbai</FooterLink>
+		</Column>
+		<Column>
+			<Heading>Social Media</Heading>
+			<FooterLink href="#">
+			<i className="fab fa-facebook-f">
+				<span style={{ marginLeft: "10px" }}>
+				Facebook
+				</span>
+			</i>
+			</FooterLink>
+			<FooterLink href="#">
+			<i className="fab fa-instagram">
+				<span style={{ marginLeft: "10px" }}>
+				Instagram
+				</span>
+			</i>
+			</FooterLink>
+			<FooterLink href="#">
+			<i className="fab fa-twitter">
+				<span style={{ marginLeft: "10px" }}>
+				Twitter
+				</span>
+			</i>
+			</FooterLink>
+			<FooterLink href="#">
+			<i className="fab fa-youtube">
+				<span style={{ marginLeft: "10px" }}>
+				Youtube
+				</span>
+			</i>
+			</FooterLink>
+		</Column>
+		</Row>
+	</Container>
+	</Box>
+    </div>
+</>
   )
 }
 

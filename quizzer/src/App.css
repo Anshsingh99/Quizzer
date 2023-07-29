@@ -4,16 +4,41 @@
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
+  margin-top: -20px;
 
 } 
+.App .nav{
+  margin-bottom: 50px;
+  background-color: #46aef3;
+  height: 50px;
+}
+.App .nav h1
+{
+  color: white;
+  margin-right: 100%;
+}
+.App .nav link
+{
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
 .home-text{
   color: white;
-  /* min-height: calc(100vh - 34px); */
   min-height: calc(100vh - 30px);
-  
+}
+.home-text .content
+{
+  width: 90%;
+  margin-left: 60px;
+  height: 80%;
+  margin-bottom: 50px;
+  background-color: rgb(20, 167, 220);
+  border-color: black;
+  box-shadow: #2980b9;
 }
 .footer--pin {
-   margin-top: 360px;
+   margin-top: 310px;
   position:relative;
  
   /* left: 0;

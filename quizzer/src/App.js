@@ -14,7 +14,19 @@ import Playquiz from './Components/Playquiz';
 
 
 function App() {
-  
+  //python quiz
+   const [Pyquestions,setPyQuestions]=useState();
+   const [Pyoptions,setPyOptions]=useState();
+   const [correctAnswers,setCorrectAnswers]=useState();
+  //flutter quiz
+  const [Flquestions,setFlQuestions]=useState();
+   const [Floptions,setFlOptions]=useState();
+   const [FlcorrectAnswers,setFlCorrectAnswers]=useState();
+   //js quiz
+   const [Jsquestions,setJsQuestions]=useState();
+   const [Jsoptions,setJsOptions]=useState();
+   const [JscorrectAnswers,setJsCorrectAnswers]=useState();
+
   const navigate=useNavigate();
   const [qno,setqno]=useState(0)
     
@@ -60,22 +72,29 @@ function App() {
   // }
  
   return (
-    <div className="App">  
-      <nav>
-        <ul>
-          <Link to="/">
-          <li>Home</li>
-          </Link>
-        </ul>
-      </nav>
+    <div className="App">
+      <div className='nav'>  
+        <nav>
+          <ul>
+            <Link to="/">
+            <h1>Quizzer</h1>
+            </Link>
+          </ul>
+          <div></div>
+        </nav>
+      </div>
       <Routes>
       <Route path='/' index element={<Home/>} />
       <Route path="Questions" element={<Questions setQuizname={setQuizname} getsom={getsom} qno={qno} setqno={setqno} dosome={dosome} setQue={setQue} setOpt={setOpt} setAns={setAns} Que={Que} Opt={Opt} Ans={Ans}/>} />
       <Route path='Ques' element={<QuesTile  qno={qno} setQue={setQue} setOpt={setOpt} setAns={setAns} Que={Que} Opt={Opt} Ans={Ans}/>}/>
-      <Route path='Quiz'  element={<Quiz />} />
-      <Route path='Pyquiz'  element={<Pyquiz />} />
-      <Route path='Jsquiz'  element={<Jsquiz />} />
-      <Route path='Flutterquiz'  element={<Flutterquiz />} />
+      <Route path='Quiz'  element={<Quiz setPyQuestions={setPyQuestions} setPyOptions={setPyOptions} setCorrectAnswers={setCorrectAnswers}
+                                    setFlQuestions={setFlQuestions} setFlOptions={setFlOptions} setFlCorrectAnswers={setFlCorrectAnswers}
+                                    setJsQuestions={setJsQuestions} setJsOptions={setJsOptions} setJsCorrectAnswers={setJsCorrectAnswers}/>} />
+      <Route path='Pyquiz'  element={<Pyquiz Pyquestions={Pyquestions} Pyoptions={Pyoptions} correctAnswers={correctAnswers} setPyQuestions={setPyQuestions} setPyOptions={setPyOptions} setCorrectAnswers={setCorrectAnswers}/>} />
+      <Route path='Jsquiz'  element={<Jsquiz setJsQuestions={setJsQuestions} setJsOptions={setJsOptions} setJsCorrectAnswers={setJsCorrectAnswers}
+                                      Jsquestions={Jsquestions} Jsoptions={Jsoptions} JscorrectAnswers={JscorrectAnswers}/>} />
+      <Route path='Flutterquiz'  element={<Flutterquiz setFlQuestions={setFlQuestions} setFlOptions={setFlOptions} setFlCorrectAnswers={setFlCorrectAnswers}
+                                            FlcorrectAnswers={FlcorrectAnswers} Flquestions={Flquestions} Floptions={Floptions}/>} />
       <Route path='Createdquiz'  element={<Createdquiz setQuizname={setQuizname} getsom={getsom} Quizname={Quizname}questions={questions} options={options} answers={answers} 
                                             setAnswers={setAnswers} setQuestions={setQuestions} setOptions={setOptions}/>} />
       <Route path='Playquiz'  element={<Playquiz getsom={getsom}/>} />

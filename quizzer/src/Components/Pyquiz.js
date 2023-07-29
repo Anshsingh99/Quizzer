@@ -1,37 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import '../App.css' 
 import Popup from './Popup';
-const Pyquiz = () => {
-    const questions = [
-        "1. What is the result of the following expression? 3 + 5 * 2",
-        "2. Which of the following data types is mutable in Python?",
-        "3. What does the 'len()' function return?",
-        "4. What is the output of this code? print('Hello, ' + 'world!')",
-        "5. How do you create a function in Python?",
-        "6. What is the correct way to open a file 'data.txt' for writing?",
-        "7. What is the output of this code? print(10 / 3)",
-        "8. How do you add an element to a list in Python?",
-        "9. What does the 'import' keyword do in Python?",
-        "10. How do you check the number of elements in a list?"
-      ];
-    
-      const options = [
-        ["1) 10", "2) 13", "3) 8", "4) 16"],
-        ["1) int", "2) str", "3) list", "4) tuple"],
-        ["1) The length of a string", "2) The number of elements in a list", "3) The sum of a tuple", "4) The maximum value in a dictionary"],
-        ["1) Hello, world!", "2) Hello + world!", "3) Hello, + world!", "4) Hello +, world!"],
-        ["1) def my_function():", "2) function my_function():", "3) create my_function():", "4) my_function():"],
-        ["1) file = open('data.txt', 'r')", "2) file = open('data.txt', 'wb')", "3) file = open('data.txt', 'w')", "4) file = open('data.txt', 'write')"],
-        ["1) 3.333", "2) 3.0", "3) 3", "4) 3.33"],
-        ["1) list.append(item)", "2) list.add(item)", "3) list.insert(item)", "4) list.extend(item)"],
-        ["1) It defines a new class", "2) It includes a module in the code", "3) It reads user input", "4) It allows access to external functions"],
-        ["1) len(list)", "2) size(list)", "3) count(list)", "4) length(list)"],
-      ];
-    
-  const correctAnswers = [3, 3, 2, 1, 1, 3, 2, 1, 2, 1];
+import axios from 'axios';
+const Pyquiz = (props) => {
+   useEffect(() => {
+    console.log('ji');
+      if(props.Pyquestions === undefined){
+      axios.get('https://quizzer.if-anshansh.repl.co/getPy').then((re)=>{
+        console.log('direct request, getting data....')
+        props.setPyQuestions(re.data['Pyquestions']);
+        props.setPyOptions(re.data['Pyoptions']);
+        props.setCorrectAnswers(re.data['PyanswersKey']);   
+      })
+    }
+},[props]);
 
-
-  const [userAnswers, setUserAnswers] = useState(new Array(questions.length).fill(''));
+  const [userAnswers, setUserAnswers] = useState(props.Pyquestions === undefined ? [] :new Array(props.Pyquestions.length).fill(''));
 
   // State to store whether the quiz has been submitted
   const [submitted, setSubmitted] = useState(false);
@@ -61,7 +45,7 @@ const Pyquiz = () => {
   const calculateScore = () => {
     var score = 0;
     for (var i = 0; i < userAnswers.length; i++) {
-      if (userAnswers[i] === String(correctAnswers[i])) {
+      if (userAnswers[i] === String(props.correctAnswers[i])) {
         score++;
       }
     }
@@ -71,10 +55,10 @@ const Pyquiz = () => {
   return (
     <div className='label-color'>
       <h2>Python Quiz</h2>
-      {questions.map((question, index) => (
+      {props.Pyquestions!== undefined&&props.Pyquestions.map((question, index) => (
         <div key={index}>
           <p>{question}</p>
-          {options[index].map((option, optionIndex) => (
+          {props.Pyoptions[index].map((option, optionIndex) => (
             <div key={optionIndex}>
               <label>
                 <input
@@ -106,7 +90,9 @@ const Pyquiz = () => {
         <div>
         {isOpen && <Popup
 content={<>
-  <p className='score-text'>You scored: {calculateScore()} out of {questions.length}</p>
+  {
+    props.Pyquestions!==undefined && <p className='score-text'>You scored: {calculateScore()} out of {props.Pyquestions.length}</p>
+  }
 </>}
    handleClose={closePopup}
 />}
