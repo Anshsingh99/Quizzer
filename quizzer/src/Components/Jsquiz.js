@@ -47,7 +47,7 @@ const Jsquiz = (props) => {
 
   return (
     <div className='label-color'>
-      <h2>JavaScript Quiz</h2>
+      <h2>JavaScript Quiz</h2>  
       {props.Jsquestions!==undefined&&props.Jsquestions.map((question, index) => (
         <div key={index}>
           <p>{question}</p>
@@ -65,6 +65,7 @@ const Jsquiz = (props) => {
               </label>
             </div>
           ))}
+      
           <div>
             <label>
               <input

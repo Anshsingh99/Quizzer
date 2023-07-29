@@ -15,13 +15,12 @@
 .App .nav h1
 {
   color: white;
-  margin-right: 100%;
+  margin-top: 20px;
+  
 }
-.App .nav link
+.App .nav .link
 {
   text-decoration: none;
-  cursor: pointer;
-  margin-bottom: 30px;
 }
 .home-text{
   color: white;
@@ -32,10 +31,10 @@
   width: 90%;
   margin-left: 60px;
   height: 80%;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   background-color: rgb(20, 167, 220);
-  border-color: black;
-  box-shadow: #2980b9;
+  border-radius: 25px;
+  border: 2px solid #73AD21;
 }
 .footer--pin {
    margin-top: 310px;
@@ -245,4 +244,40 @@
 }
 .score-text{
   color: black;
+}
+.start-quiz-button1 {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: wavy;
+  background-color:#61dafb;
+  
+  color:#2980b9; 
+  border: 5px solid #3498db;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  margin-bottom: 30px;
+  
+}
+
+.start-quiz-button1:hover {
+  background-color: #2980b9;
+  transform: translateY(-10px);
+  background-color: #3498db;
+  color: #fff;
+}
+.quizz
+{
+  height: 600px;
+}
+.questions
+{
+  background-color: white;
 }

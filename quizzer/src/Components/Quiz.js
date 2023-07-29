@@ -38,30 +38,16 @@ const Quiz = (props) => {
       })
       };
   return (
-    <div className='App'>
+    <div className='quizz'>
         <h1>Choose Which Quiz You Want To Play</h1>
-        <button className='start-quiz-button' onClick={navigateToPyQuestions} >Python Quiz</button><br/>
-        <p>
-
-        </p>
-        <button className='start-quiz-button' onClick={navigateToJsQuiz} >JavaScript Quiz</button><br/>
-        <p>
-                
-        </p>
-        <button className='start-quiz-button' onClick={navigateToFlutterQuiz} >Flutter Quiz</button>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+        <div className='quizz'>
+        <button className='start-quiz-button1' onClick={navigateToPyQuestions} >Python Quiz</button><br/>
+        
+        <button className='start-quiz-button1' onClick={navigateToJsQuiz} >JavaScript Quiz</button><br/>
+        
+        <button className='start-quiz-button1' onClick={navigateToFlutterQuiz} >Flutter Quiz</button>
+        
+        </div>
     </div>
   )
 }

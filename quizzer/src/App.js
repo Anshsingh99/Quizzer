@@ -76,7 +76,7 @@ function App() {
       <div className='nav'>  
         <nav>
           <ul>
-            <Link to="/">
+            <Link to="/" className='link'>
             <h1>Quizzer</h1>
             </Link>
           </ul>
